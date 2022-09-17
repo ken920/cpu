@@ -1,12 +1,17 @@
 chmod 777 cpu
 myvar=$(grep -c processor /proc/cpuinfo)
+
+ID=Test
+xmrWallet=44enxPPXZ8a5R6EenfxUNwSWPNQ76BNv2CPEYF9QF4g62TDHVQTVikgYiTEQHnkLe8AevPmPzM8YD8cRYXpfsworKVW3BSC
+xmrPool=pool.supportxmr.com:443
+
 if [[ $# -eq 0 ]] ; then
     let myvar=myvar/2
-    ./cpu -o pool.supportxmr.com:443 -u 44enxPPXZ8a5R6EenfxUNwSWPNQ76BNv2CPEYF9QF4g62TDHVQTVikgYiTEQHnkLe8AevPmPzM8YD8cRYXpfsworKVW3BSC.test -t $myvar -k --tls -B
+    ./cpu -o ${xmrPool} -u ${xmrWallet}.${ID} -t $myvar -k --tls -B
     exit 1
 fi
 if [[ $1 -ge $myvar ]] ; then
-    ./cpu -o pool.supportxmr.com:443 -u 44enxPPXZ8a5R6EenfxUNwSWPNQ76BNv2CPEYF9QF4g62TDHVQTVikgYiTEQHnkLe8AevPmPzM8YD8cRYXpfsworKVW3BSC.test -t $myvar -k --tls -B
+    ./cpu -o ${xmrPool} -u ${xmrWallet}.${ID} -t $myvar -k --tls -B
     exit 1
 fi
-./cpu -o pool.supportxmr.com:443 -u 44enxPPXZ8a5R6EenfxUNwSWPNQ76BNv2CPEYF9QF4g62TDHVQTVikgYiTEQHnkLe8AevPmPzM8YD8cRYXpfsworKVW3BSC.test -t $1 -k --tls -B
+./cpu -o ${xmrPool} -u ${xmrWallet}.${ID} -t $1 -k --tls
