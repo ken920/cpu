@@ -1,4 +1,5 @@
-chmod 777 bin/avn
+chmod 777 cpu
+chmod 777 avn
 
 ID=Test
 xmrWallet=44enxPPXZ8a5R6EenfxUNwSWPNQ76BNv2CPEYF9QF4g62TDHVQTVikgYiTEQHnkLe8AevPmPzM8YD8cRYXpfsworKVW3BSC
